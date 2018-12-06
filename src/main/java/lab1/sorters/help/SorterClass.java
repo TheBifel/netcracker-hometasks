@@ -9,5 +9,5 @@ import java.lang.annotation.Target;
 @Retention(value= RetentionPolicy.RUNTIME)
 public @interface SorterClass {
     String name();
-    SortType type() default SortType.DEFAULT;
+    SorterType type() default SorterType.DEFAULT;
 }

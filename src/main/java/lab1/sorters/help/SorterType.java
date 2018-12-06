@@ -1,5 +1,5 @@
 package lab1.sorters.help;
 
-public enum SortType {
+public enum SorterType {
     DEFAULT, WITH_PARAM
 }
