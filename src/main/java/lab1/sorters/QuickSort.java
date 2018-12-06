@@ -1,5 +1,8 @@
 package lab1.sorters;
 
+import lab1.sorters.help.Sorter;
+import lab1.sorters.help.SorterClass;
+
 @SorterClass(name = "Quick sort")
 public class QuickSort
         extends BubbleSort

@@ -1,6 +1,10 @@
 package lab1.sorters;
 
-//@SorterClass(name = "Merge sort")
+import lab1.sorters.help.SortType;
+import lab1.sorters.help.Sorter;
+import lab1.sorters.help.SorterClass;
+
+@SorterClass(name = "Merge sort", type = SortType.WITH_PARAM)
 public class MergeSort implements ArraySorter {
 
     private final ArraySorter sorter;

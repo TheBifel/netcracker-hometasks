@@ -1,4 +1,4 @@
-package lab1.sorters;
+package lab1.sorters.help;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,4 +1,4 @@
-package lab1.sorters;
+package lab1.sorters.help;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,4 +9,5 @@ import java.lang.annotation.Target;
 @Retention(value= RetentionPolicy.RUNTIME)
 public @interface SorterClass {
     String name();
+    SortType type() default SortType.DEFAULT;
 }
