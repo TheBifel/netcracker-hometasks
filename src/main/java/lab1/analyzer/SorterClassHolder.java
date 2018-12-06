@@ -80,12 +80,9 @@ public class SorterClassHolder {
      * @return new {@link ArraySorter}
      */
     private ArraySorter newInstance(Class<?> c) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        if (cParam != null) {
-            Constructor<?> constructor = c.getConstructor(ArraySorter.class);
-            return (ArraySorter) constructor.newInstance(cParam.newInstance(cParam.c));
-        }
-        Constructor<?> constructor = c.getDeclaredConstructor();
-        return (ArraySorter) constructor.newInstance();
+        return cParam != null ?
+                (ArraySorter) c.getConstructor(ArraySorter.class).newInstance(cParam.newInstance(cParam.c)) :
+                (ArraySorter) c.getDeclaredConstructor().newInstance();
     }
 
     /**

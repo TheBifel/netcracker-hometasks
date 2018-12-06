@@ -1,5 +1,10 @@
 package lab1.output;
 
+/**
+ * Class used to holding result of analysing
+ *
+ * @author Bohdan Ishchenko
+ */
 public class ResultHolder {
     private int time;
     private String sorterName;
@@ -8,7 +13,6 @@ public class ResultHolder {
     public int getTime() {
         return time;
     }
-
 
     public String getSorterName() {
         return sorterName;
@@ -41,6 +45,9 @@ public class ResultHolder {
         return formatter.format(time, sorterName, fillerName);
     }
 
+    /**
+     * Functional interface for custom and pretty result formatting
+     */
     @FunctionalInterface
     public interface ResultFormatter {
 
@@ -48,7 +55,7 @@ public class ResultHolder {
 
         static ResultFormatter defaultFormat() {
             return (time, sorterName, fillerName) ->
-                    String.format("Sorter - %25s | %-25s - filler | time = %10d", sorterName, fillerName, time);
+                    String.format("Sorter - %28s | %-25s - filler | time = %10d", sorterName, fillerName, time);
         }
     }
 }

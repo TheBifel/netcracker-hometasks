@@ -4,11 +4,23 @@ import lab1.sorters.help.SorterType;
 import lab1.sorters.help.Sorter;
 import lab1.sorters.help.SorterClass;
 
+/**
+ * Class class which holds a child of {@link ArraySorter} marked as {@link SorterType#DEFAULT}
+ *
+ * @author Bohdan Ishchenko
+ */
 @SorterClass(name = "Merge sort", type = SorterType.WITH_PARAM)
 public class MergeSort implements ArraySorter {
 
+    /**
+     * {@link ArraySorter} marked as {@link SorterType#DEFAULT}
+     */
     private final ArraySorter sorter;
 
+    /**
+     *
+     * @param sorter marked as {@link SorterType#DEFAULT}
+     */
     public MergeSort(ArraySorter sorter) {
         this.sorter = sorter;
     }
@@ -19,6 +31,10 @@ public class MergeSort implements ArraySorter {
         divide(array);
     }
 
+    /**
+     * Divides array and sort both part using {@link #sorter#sort(int[])} and then merge it
+     * @param array to sort
+     */
     public void divide(int[] array) {
         var m = array.length / 2;
         var arr1 = new int[m];
@@ -30,6 +46,12 @@ public class MergeSort implements ArraySorter {
         merge(array, arr1, arr2);
     }
 
+    /**
+     * Method merge first and second part of array
+     * @param array result
+     * @param arr1 first part
+     * @param arr2 second part
+     */
     public void merge(int[] array, int[] arr1, int[] arr2) {
         var j = 0;
         var k = 0;

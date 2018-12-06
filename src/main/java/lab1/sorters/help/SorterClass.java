@@ -5,9 +5,16 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(value=ElementType.TYPE)
-@Retention(value= RetentionPolicy.RUNTIME)
+/**
+ * Used for marking {@link lab1.sorters.ArraySorter}
+ *
+ * @author Bohdan Ishchenko
+ */
+@Target(value = ElementType.TYPE)
+@Retention(value = RetentionPolicy.RUNTIME)
 public @interface SorterClass {
+
     String name();
+
     SorterType type() default SorterType.DEFAULT;
 }

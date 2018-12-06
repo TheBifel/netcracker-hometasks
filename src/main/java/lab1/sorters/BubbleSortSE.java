@@ -3,6 +3,11 @@ package lab1.sorters;
 import lab1.sorters.help.Sorter;
 import lab1.sorters.help.SorterClass;
 
+/**
+ * Class class which contains bubble-sort algorithm
+ *
+ * @author Bohdan Ishchenko
+ */
 @SorterClass(name = "Bubble Sort SE")
 public class BubbleSortSE
         extends BubbleSort

@@ -3,6 +3,11 @@ package lab1.sorters;
 import lab1.sorters.help.Sorter;
 import lab1.sorters.help.SorterClass;
 
+/**
+ * Class class which contains quick sort algorithm
+ *
+ * @author Bohdan Ishchenko
+ */
 @SorterClass(name = "Quick sort")
 public class QuickSort
         extends BubbleSort
@@ -14,6 +19,9 @@ public class QuickSort
         qSort(array, 0, array.length - 1);
     }
 
+    /**
+     * Quick sort algorithm
+     */
     private void qSort(int[] array, int start, int end) {
         if (array == null || array.length == 0)
             return;

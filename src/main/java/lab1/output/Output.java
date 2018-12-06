@@ -6,24 +6,30 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 public class Output {
 
-    public static final Comparator<Object> SORT_BY_TIME = Comparator.comparingInt(resultHolder -> ((ResultHolder) resultHolder).getTime());
-    public static final Comparator<Object> SORT_BY_FILLER_NAME = Comparator.comparing(resultHolder -> ((ResultHolder) resultHolder).getFillerName());
-    public static final Comparator<Object> SORT_BY_SORTER_NAME = Comparator.comparing(resultHolder -> ((ResultHolder) resultHolder).getSorterName());
+    public static final Comparator<ResultHolder> SORT_BY_TIME = Comparator.comparingInt(ResultHolder::getTime);
+    public static final Comparator<ResultHolder> SORT_BY_FILLER_NAME = Comparator.comparing(ResultHolder::getFillerName);
+    public static final Comparator<ResultHolder> SORT_BY_SORTER_NAME = Comparator.comparing(ResultHolder::getSorterName);
+    
+    private final List<ResultHolder> data;
 
+    public Output(List<ResultHolder> data) {
+        this.data = data;
+    }
 
-    public static void createExcel(String fileName, List<ResultHolder> results) {
+    public void createExcel(String fileName) {
         try {
             var workbook = new XSSFWorkbook();
             var spreadsheet = workbook.createSheet("results");
 
-            for (var i = 0; i < results.size(); i++) {
+            for (var i = 0; i < data.size(); i++) {
                 var row = spreadsheet.createRow(i);
-                var resultArray = results.get(i).toArray();
+                var resultArray = data.get(i).toArray();
                 for (var j = 0; j < resultArray.length; j++) {
                     row.createCell(j).setCellValue(resultArray[j]);
                 }
@@ -36,16 +42,16 @@ public class Output {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
-    public static void print(List<ResultHolder> results) {
-        for (ResultHolder result : results) {
+    public void print() {
+        for (ResultHolder result : data) {
             System.out.println(result);
         }
     }
-
-    public static void sort(List<ResultHolder> data, Comparator<Object> comparator) {
-        Arrays.sort(data.toArray(), comparator);
+    
+    public void sort(Comparator<ResultHolder> sortBy){
+        data.sort(sortBy);
     }
+
 }

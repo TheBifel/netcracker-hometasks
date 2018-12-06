@@ -3,14 +3,19 @@ package lab1.sorters;
 import lab1.sorters.help.Sorter;
 import lab1.sorters.help.SorterClass;
 
+/**
+ * Class class which contains bubble-sort algorithm
+ *
+ * @author Bohdan Ishchenko
+ */
 @SorterClass(name = "Bubble Sort ES")
 public class BubbleSortES
         extends BubbleSort
         implements ArraySorter {
+
     @Sorter
     @Override
     public void sort(int[] array) {
-
         for (int i = array.length - 1; i >= 0; i--) {
             var isReady = true;
 
