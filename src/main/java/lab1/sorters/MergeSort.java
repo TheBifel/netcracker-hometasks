@@ -1,18 +1,15 @@
 package lab1.sorters;
 
-public class MergeSort implements Sorter {
+//@SorterClass(name = "Merge sort")
+public class MergeSort implements ArraySorter {
 
-    private final Sorter sorter;
+    private final ArraySorter sorter;
 
-    public MergeSort(Sorter sorter) {
+    public MergeSort(ArraySorter sorter) {
         this.sorter = sorter;
     }
 
-    @Override
-    public String getName() {
-        return "MergeSort(" + sorter.getName() + ")";
-    }
-
+    @Sorter
     @Override
     public void sort(int[] array) {
         divide(array);

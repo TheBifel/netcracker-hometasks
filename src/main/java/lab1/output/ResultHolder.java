@@ -48,7 +48,7 @@ public class ResultHolder {
 
         static ResultFormatter defaultFormat() {
             return (time, sorterName, fillerName) ->
-                    String.format("Sorter - %25s | %-20s - filler | time = %10d", sorterName, fillerName, time);
+                    String.format("ArraySorter - %25s | %-25s - filler | time = %10d", sorterName, fillerName, time);
         }
     }
 }

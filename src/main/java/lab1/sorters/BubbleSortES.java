@@ -1,20 +1,10 @@
 package lab1.sorters;
 
-public class BubbleSortES implements Sorter {
-
-    private static BubbleSortES INSTANCE = new BubbleSortES();
-
-    public static BubbleSortES getInstance() {
-        return INSTANCE;
-    }
-
-    private BubbleSortES() {}
-
-    @Override
-    public String getName() {
-        return "BubbleSortES";
-    }
-
+@SorterClass(name = "Bubble Sort ES")
+public class BubbleSortES
+        extends BubbleSort
+        implements ArraySorter {
+    @Sorter
     @Override
     public void sort(int[] array) {
 

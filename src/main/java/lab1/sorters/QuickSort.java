@@ -1,20 +1,11 @@
 package lab1.sorters;
 
-public class QuickSort implements Sorter {
+@SorterClass(name = "Quick sort")
+public class QuickSort
+        extends BubbleSort
+        implements ArraySorter {
 
-    private static QuickSort INSTANCE = new QuickSort();
-
-    private QuickSort() {}
-
-    public static QuickSort getInstance() {
-        return INSTANCE;
-    }
-
-    @Override
-    public String getName() {
-        return "QuickSort";
-    }
-
+    @Sorter
     @Override
     public void sort(int[] array) {
         qSort(array, 0, array.length - 1);

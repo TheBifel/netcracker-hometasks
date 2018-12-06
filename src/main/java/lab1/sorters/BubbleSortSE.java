@@ -1,21 +1,11 @@
 package lab1.sorters;
 
+@SorterClass(name = "Bubble Sort SE")
+public class BubbleSortSE
+        extends BubbleSort
+        implements ArraySorter {
 
-public class BubbleSortSE implements Sorter {
-
-    private static BubbleSortSE INSTANCE = new BubbleSortSE();
-
-    private BubbleSortSE() {}
-
-    public static BubbleSortSE getInstance() {
-        return INSTANCE;
-    }
-
-    @Override
-    public String getName() {
-        return "BubbleSortSE";
-    }
-
+    @Sorter
     @Override
     public void sort(int[] array) {
 
