@@ -17,17 +17,17 @@ public class Output {
         var excel = new Excel();
         for (ResultTable table : data) {
             var sheet = excel.createSheet(table.getName());
-            var bounds = excel.createTable(sheet, table);
-            excel.createGraph(sheet, bounds);
+            var bounds = excel.createTable(sheet, table, 2, 2);
+            excel.createGraph(sheet, bounds, 10, 0, 35, 20);
         }
         excel.save(fileName);
     }
 
     public void print() {
-        for (ResultTable sheet : data) {
-            System.out.println("Sheet");
-            for (int i = 0; i < sheet.size(); i++) {
-                System.out.println(sheet.get(i));
+        for (ResultTable table : data) {
+            System.out.println("Table");
+            for (int i = 0; i < table.size(); i++) {
+                System.out.println(table.get(i));
             }
         }
     }
